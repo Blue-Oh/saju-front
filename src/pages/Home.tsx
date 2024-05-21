@@ -1,46 +1,55 @@
-import { Row, Col } from "./style/StyledDefaults";
+import { useNavigate } from "../hook/useNavigate";
+import { Row, Col } from "../style/StyledDefaults";
 import {
   Body,
   ButtonContainer,
   ButtonWrapper,
   Input,
   Popularity,
+  PopularityContainer,
+  SearchContainer,
   SearchTitle,
   Title,
-} from "./style/StyledHome";
+} from "../style/StyledHome";
 
 const Home = () => {
+  const { goList } = useNavigate();
   return (
     <>
       <Body>
         <Row>
           <Col>
-            <Title>해몽이올시다</Title>
+            <Title>해몽이오</Title>
           </Col>
         </Row>
-        <Col>
+        <SearchContainer>
           <Col>
             <SearchTitle>검색</SearchTitle>
           </Col>
           <Col>
             <Input />
           </Col>
-        </Col>
+        </SearchContainer>
         <ButtonWrapper>
           <ButtonContainer>
-            <Col>
+            <PopularityContainer>
+              <Popularity onClick={goList}>종류</Popularity>
+            </PopularityContainer>
+          </ButtonContainer>
+          <ButtonContainer>
+            <PopularityContainer>
               <Popularity>로또 1등 담첨 꿈</Popularity>
-            </Col>
+            </PopularityContainer>
           </ButtonContainer>
           <ButtonContainer>
-            <Col>
+            <PopularityContainer>
               <Popularity>추락하는 꿈</Popularity>
-            </Col>
+            </PopularityContainer>
           </ButtonContainer>
           <ButtonContainer>
-            <Col>
+            <PopularityContainer>
               <Popularity>죽은 사람과 대화하는 꿈</Popularity>
-            </Col>
+            </PopularityContainer>
           </ButtonContainer>
         </ButtonWrapper>
       </Body>

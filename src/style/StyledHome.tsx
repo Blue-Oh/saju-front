@@ -11,6 +11,14 @@ export const Body = styled(Col)`
   max-width: 500px;
 `;
 
+export const PopularityContainer = styled(Col)`
+  width: 60%;
+`;
+
+export const SearchContainer = styled(Col)`
+  margin-bottom: 1.5rem;
+`;
+
 export const Popularity = styled(Col)`
   background-color: #a8e0ff;
   color: #fff;
@@ -28,6 +36,7 @@ export const Title = styled(Col)`
   font-size: 3rem;
   color: #fff;
   font-weight: 700;
+  margin-bottom: 10rem;
 `;
 
 export const SearchTitle = styled(Col)`
@@ -39,6 +48,7 @@ export const SearchTitle = styled(Col)`
 
 export const ButtonWrapper = styled(Col)`
   float: right;
+  width: 100%;
 `;
 
 export const ButtonContainer = styled(Row)`

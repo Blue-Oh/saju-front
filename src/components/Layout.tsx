@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import Header from "./Header";
-import { Body } from "../pages/style/StyledLayout";
+import Head from "./Head";
+import { Body } from "../style/StyledLayout";
 
-const Layout = (props: { children: React.ReactNode }) => {
+const Layout = (props: { children: React.ReactNode; title: string }) => {
   return (
     <>
-      <Header />
+      <Head title={props.title} />
       <Body>{props.children}</Body>
     </>
   );
