@@ -8,5 +8,6 @@ export const useNavigate = () => {
     goList: () => navigate(`/list`),
     goDetail: (id: number) => navigate(`/${id}`),
     goDetailList: (page: string) => navigate(`/list/${page}`),
+    goSearch: (id: string) => navigate(`/search?id=${id}`),
   };
 };

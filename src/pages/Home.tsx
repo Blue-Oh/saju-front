@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "../hook/useNavigate";
 import { Row, Col } from "../style/StyledDefaults";
 import {
@@ -13,7 +14,12 @@ import {
 } from "../style/StyledHome";
 
 const Home = () => {
-  const { goList, goDetailList, goDetail } = useNavigate();
+  const { goList, goDetailList, goDetail, goSearch } = useNavigate();
+  const [search, setSearch] = useState<string>("");
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
   return (
     <>
       <Body>
@@ -24,10 +30,19 @@ const Home = () => {
         </Row>
         <SearchContainer>
           <Col>
-            <SearchTitle>검색</SearchTitle>
+            <SearchTitle onClick={() => goSearch(search)}>검색</SearchTitle>
           </Col>
           <Col>
-            <Input />
+            <Input
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  goSearch(search);
+                }
+              }}
+            />
           </Col>
         </SearchContainer>
         <ButtonWrapper>
