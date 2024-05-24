@@ -6,5 +6,7 @@ export const useNavigate = () => {
     goBack: () => navigate(-1),
     goHome: () => navigate("/"),
     goList: () => navigate(`/list`),
+    goDetail: (id: number) => navigate(`/${id}`),
+    goDetailList: (page: string) => navigate(`/list/${page}`),
   };
 };

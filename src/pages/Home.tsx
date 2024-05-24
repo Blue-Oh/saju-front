@@ -13,7 +13,7 @@ import {
 } from "../style/StyledHome";
 
 const Home = () => {
-  const { goList } = useNavigate();
+  const { goList, goDetailList, goDetail } = useNavigate();
   return (
     <>
       <Body>
@@ -38,17 +38,31 @@ const Home = () => {
           </ButtonContainer>
           <ButtonContainer>
             <PopularityContainer>
-              <Popularity>로또 1등 담첨 꿈</Popularity>
+              <Popularity onClick={() => goDetailList("lottery")}>
+                로또 1등 담첨 꿈
+              </Popularity>
             </PopularityContainer>
           </ButtonContainer>
           <ButtonContainer>
             <PopularityContainer>
-              <Popularity>추락하는 꿈</Popularity>
+              <Popularity
+                onClick={() => {
+                  goDetail(221);
+                }}
+              >
+                추락하는 꿈
+              </Popularity>
             </PopularityContainer>
           </ButtonContainer>
           <ButtonContainer>
             <PopularityContainer>
-              <Popularity>죽은 사람과 대화하는 꿈</Popularity>
+              <Popularity
+                onClick={() => {
+                  goDetail(222);
+                }}
+              >
+                죽은 사람과 대화하는 꿈
+              </Popularity>
             </PopularityContainer>
           </ButtonContainer>
         </ButtonWrapper>

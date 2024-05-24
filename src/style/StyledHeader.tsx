@@ -13,12 +13,19 @@ export const AntdHeader = styled(Header)`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 `;
 
 export const Title = styled(Col)`
   color: #fff;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const HomeOutlined = styled(AntdHomeOutlined)`
